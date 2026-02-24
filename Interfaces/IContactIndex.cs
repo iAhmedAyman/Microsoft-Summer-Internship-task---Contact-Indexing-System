@@ -3,8 +3,8 @@ using CIS.Contacts;
 namespace CIS.Interfaces {
     public interface IContactIndex
     {
-        bool Add(Contact contact);
-        bool Remove(DATA_FIELD DATA_FIELD, string value);
-        bool Update(DATA_FIELD DATA_FIELD, string oldValue, Contact newContact);
+        LinkedList<LinkedListNode<Contact>> GetContacts(k value);
+        void Add(LinkedListNode<Contact> contactNode, k key);
+        public void Remove(LinkedListNode<Contact> contactNode, k key);
     }
 }
