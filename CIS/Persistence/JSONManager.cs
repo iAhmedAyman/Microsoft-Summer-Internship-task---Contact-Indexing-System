@@ -1,5 +1,5 @@
-using CIS.Contacts
-using CIS.Interfaces
+using CIS.Contacts;
+using CIS.Interfaces;
 
 namespace CIS.Presistence {
     class JSONManager : IPresistenceManager {

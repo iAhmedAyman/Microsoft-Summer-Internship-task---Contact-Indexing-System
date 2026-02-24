@@ -1,4 +1,4 @@
-enum DATA_FIELD
+public enum DATA_FIELD
 {
     ID,
     NAME,
