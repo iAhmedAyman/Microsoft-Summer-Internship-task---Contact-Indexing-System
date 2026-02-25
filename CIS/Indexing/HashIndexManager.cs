@@ -1,17 +1,18 @@
 using CIS.Contacts;
+using CIS.Interfaces;
 
 namespace CIS.Indexing {
-    class HashIndexManager : IndexManager {
+    class HashIIndexManager : IIndexManager {
         private HashContactIndex<string> idIndex;
         private HashContactIndex<string> nameIndex;
         private HashContactIndex<string> phoneIndex;
         private HashContactIndex<string> emailIndex;
 
-        public HashIndexManager()
+        public HashIIndexManager()
         {
-            idIndex = new HashContactIndex<string>(c => c.ID);
+            idIndex = new HashContactIndex<string>(c => c.Id);
             nameIndex = new HashContactIndex<string>(c => c.Name);
-            phoneIndex = new HashContactIndex<string>(c => c.PhoneNumber);
+            phoneIndex = new HashContactIndex<string>(c => c.Phone);
             emailIndex = new HashContactIndex<string>(c => c.Email);
         }
 

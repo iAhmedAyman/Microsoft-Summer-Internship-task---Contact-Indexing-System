@@ -4,7 +4,7 @@ namespace CIS.Interfaces {
     public interface IMainMenu
     {
         void main(string[] args);
-        private void printMenu();
-        private void printContacts(LinkedList<Contact> contacts);
+        void printMenu();
+        void printContacts(LinkedList<Contact> contacts);
     }
 }

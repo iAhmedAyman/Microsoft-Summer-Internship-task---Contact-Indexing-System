@@ -4,16 +4,16 @@ using CIS.Indexing;
 
 namespace CIS.Search {
     class MapSearchEngine : ISearchEngine {
-        private IndexManager indexManager;
+        private IIndexManager IIndexManager;
 
-        public MapSearchEngine(IndexManager indexManager)
+        public MapSearchEngine(IIndexManager IIndexManager)
         {
-            this.indexManager = indexManager;
+            this.IIndexManager = IIndexManager;
         }
 
         public LinkedList<LinkedListNode<Contact>> Search(DATA_FIELD field, string value)
         {
-            return indexManager.GetIndex(field).GetContacts(value);
+            return IIndexManager.GetContacts(field, value);
         }
     }
 }

@@ -1,3 +1,5 @@
+using CIS.Interfaces;
+
 namespace CIS.Contacts
 {
     class ContactList : IContactContainer{
@@ -8,19 +10,24 @@ namespace CIS.Contacts
             contacts = new LinkedList<Contact>();
         }
 
-        public void Add(Contact contact)
+        public LinkedListNode<Contact> Add(Contact contact)
         {
-            contacts.AddLast(contact);
+            return contacts.AddLast(contact);
         }
 
-        public void Remove(Contact contact)
+        public void Remove(LinkedListNode<Contact> contactNode)
         {
-            contacts.Remove(contact);
+            contacts.Remove(contactNode);
         }
 
-        public LinkedList<Contact> GetAllContacts()
+        public LinkedList<Contact> GetContacts()
         {
             return contacts;
+        }
+
+        public void SetContacts(LinkedList<Contact> contacts)
+        {
+            this.contacts = contacts;
         }
     }
 }

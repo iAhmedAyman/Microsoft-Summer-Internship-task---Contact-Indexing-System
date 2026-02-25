@@ -7,16 +7,16 @@ namespace CIS.Controller {
     class ConcreteContactService : IContactService {
         private IPresistenceManager persistenceManager;
         private ISearchEngine searchEngine;
-        private IndexManager indexManager;
+        private IIndexManager indexManager;
         private IContactContainer contactContainer;
         private IFilterEngine filterEngine;
 
-        public ConcreteContactService(IPresistenceManager persistenceManager, ISearchEngine searchEngine, IndexManager indexManager, IFilterEngine filterEngine)
+        public ConcreteContactService(IPresistenceManager persistenceManager, ISearchEngine searchEngine, IIndexManager indexManager, IFilterEngine filterEngine)
         {
             this.persistenceManager = persistenceManager;
             this.searchEngine = searchEngine;
             this.indexManager = indexManager;
-            this.contactContainer = new ContactContainer();
+            this.contactContainer = new ContactList();
             this.filterEngine = filterEngine;
         }
 
@@ -48,9 +48,7 @@ namespace CIS.Controller {
             foreach (LinkedListNode<Contact> contactNode in contactNodes)
             {
                 Contact oldContact = contactNode.Value;
-                contactContainer.Update(contactNode, newContact);
-                indexManager.Remove(contactNode);
-                indexManager.Add(contactNode);
+                contactNode.Value = newContact;
             }
         }
 

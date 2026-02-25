@@ -1,4 +1,5 @@
 using CIS.Contacts;
+using CIS.Interfaces;
 
 namespace CIS.Indexing {
     class HashContactIndex<TKey> : IContactIndex<TKey> {
