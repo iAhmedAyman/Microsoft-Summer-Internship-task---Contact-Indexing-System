@@ -33,7 +33,7 @@ A contact management app that stores and finds contacts quickly using hash-based
 
 3. Run the app:
    ```powershell
-   dotnet run --project CIS/CIS.csproj
+   dotnet run
    ```
 
 ### Using the App
